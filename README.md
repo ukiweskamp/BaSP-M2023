@@ -14,3 +14,6 @@ Landing Page, Socios, Profesores, Admin, Super Admin y Log In.
 Development of the HTML structure exclusively for the desktop version of the Landing Page.
 Emphasis was placed on understanding and working on the semantics of the code and not on the graphic part.
 Images were added to the repository for the proper functioning of anyone who runs it by downloading it.
+
+## Authors
+Eugenio Weskamp
