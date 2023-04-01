@@ -97,3 +97,13 @@ header .title{
     color: #373867
     
 }
+
+/*--SECTION APPS--*/
+
+.Section-App h2 {
+    margin-top: 50px;
+    padding-bottom: 15px;
+    width: 200px;
+    font-size: 30px;
+    border-bottom: 5px solid #AACE9B;
+}
