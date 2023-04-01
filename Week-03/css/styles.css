@@ -17,6 +17,8 @@ margin-right: 50px;
     margin: 18px 0px 0px 3px;
 }
 
+/*--HEADER--*/
+
 .main-header{
     border-bottom: 9px solid #AACE9B;
 }
@@ -38,31 +40,60 @@ header .title{
     margin: 0px 14px 10px 0px;
 }
 
+/*--MAIN SECTION--*/
+
 
 .main-section {
+    padding-top: 70px;
     background-color: rgba(170, 206, 155, 0.1);
-    margin-top: 0px;
-    padding-top: 0px;
 }
 
-.main-section h2 {
-    padding-top: 135px;
+.main-section .text-main-section {
+    width: 749px;
+    float: left;
+    padding-left: 8px;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+
+.main-section .text-main-section h2 {
+    padding-top: 65px;
     font-size: 40px;
-    margin-left: 8px;
 }
 
-.main-section h3 {
+.main-section .text-main-section h3 {
     font-size: 30px;
     opacity: 0.4;
-    margin-top: 20px;
-    margin-left: 8px;
+    padding-top: 20px;
 }
 
-.main-section p {
-    width: 700px;
-    padding-top: 100px;
-    margin-left: 8px;
+.main-section .text-main-section p {
     font-size: 20px;
     opacity: 0.4;
     line-height: 30px;
+    padding-top: 135px;
+    width: 600px;
+}
+
+.main-section .imagen-main-section img {
+    width: 670px;
+    height:  700px;
+    margin-bottom: 50px;
+    margin-right: 0px;
+    padding-right: 0px;
+}
+
+.main-section button {
+    margin-top: 110px;
+    margin-left: 12px;
+    background-color: #AACE9B;
+    border-color: #AACE9B;
+    border-style: solid;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #373867
+    
 }
