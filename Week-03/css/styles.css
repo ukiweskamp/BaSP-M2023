@@ -17,6 +17,10 @@ margin-right: 50px;
     margin: 18px 0px 0px 3px;
 }
 
+.clr {
+    clear: both;
+}
+
 /*--HEADER--*/
 
 .main-header{
@@ -100,10 +104,66 @@ header .title{
 
 /*--SECTION APPS--*/
 
+.Section-App {
+    border-bottom: 1px solid #dde1e3;
+    padding-bottom: 70px;
+}
+
 .Section-App h2 {
     margin-top: 50px;
     padding-bottom: 15px;
     width: 200px;
     font-size: 30px;
     border-bottom: 5px solid #AACE9B;
+}
+
+.Section-App h3 {
+    padding-top: 20px;
+    font-size: 40px;
+    padding-bottom: 50px;
+}
+
+.Section-App img {
+    float: left;
+    margin: 50px;
+    width: 120px;
+    margin-bottom: 70px;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+
+.Section-App .SA-box1 {
+    float: left;
+    width: 709px;
+    height: 277px;
+    padding: 50px 30px 30px 30px;
+    box-sizing: border-box;
+}
+
+.Section-App .SA-box2 {
+    float: right;
+    width: 709px;
+    height: 277px;
+    padding: 50px 30px 30px 30px;
+    box-sizing: border-box;
+}
+
+.Section-App .SA-box3 {
+    float: left;
+    width: 709px;
+    height: 277px;
+    padding: 50px 30px 30px 30px;
+    box-sizing: border-box;
+}
+
+.Section-App .SA-box4 {
+    float: right;
+    width: 709px;
+    height: 277px;
+    padding: 50px 30px 30px 30px;
+    box-sizing: border-box;
+}
+
+.Section-App p {
+    line-height: 16px;
 }
