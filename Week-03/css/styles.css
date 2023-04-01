@@ -45,8 +45,24 @@ header .title{
     padding-top: 0px;
 }
 
-.main-section h2{;
+.main-section h2 {
     padding-top: 135px;
     font-size: 40px;
-    margin: 8px;
+    margin-left: 8px;
+}
+
+.main-section h3 {
+    font-size: 30px;
+    opacity: 0.4;
+    margin-top: 20px;
+    margin-left: 8px;
+}
+
+.main-section p {
+    width: 700px;
+    padding-top: 100px;
+    margin-left: 8px;
+    font-size: 20px;
+    opacity: 0.4;
+    line-height: 30px;
 }
