@@ -208,3 +208,13 @@ header .title{
 #contact {
     width: 700px;
 }
+
+.my-form textarea {
+    width: 1413px;
+    height: 150px;
+    border-radius: 5px;
+    color: #373867;
+    font-size: 13px;
+    padding: 8px 0px 0px 15px;
+
+}
