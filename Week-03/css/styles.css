@@ -174,5 +174,37 @@ header .title{
 
 .contact h2 {
     margin-top: 100px;
+    margin-bottom: 30px;
     font-size: 30px;
+}
+
+.my-form label {
+    display:block;
+    font-weight: bold;
+}
+
+.my-form .name, .lname {
+    float: left;
+    width: 470px;
+    margin-right: 10px;
+
+}
+
+.my-form input {
+    padding: 8px 0px;
+    margin-bottom: 30px;
+    width: 450px;
+    height: 30px;
+    color: #373867;
+    border: 1px solid #373867;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+::placeholder {
+    padding-left: 10px;
+}
+
+#contact {
+    width: 700px;
 }
