@@ -168,3 +168,11 @@ header .title{
     width: 570px;
     line-height: 16px;
 }
+
+
+/*--SECTION CONTACT--*/
+
+.contact h2 {
+    margin-top: 100px;
+    font-size: 30px;
+}
