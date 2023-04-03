@@ -126,21 +126,20 @@ header .title{
 .Section-App img {
     float: left;
     margin: 50px;
-    width: 120px;
     margin-bottom: 70px;
     margin-left: 0px;
     margin-top: 20px;
 }
 
-.Section-App .SA-box1 {
+.box1 {
     float: left;
     width: 709px;
     height: 277px;
-    padding: 50px 30px 30px 30px;
+    padding: 50px 30px 30px 0px;
     box-sizing: border-box;
 }
 
-.Section-App .SA-box2 {
+.box2 {
     float: right;
     width: 709px;
     height: 277px;
@@ -148,15 +147,15 @@ header .title{
     box-sizing: border-box;
 }
 
-.Section-App .SA-box3 {
+.box3 {
     float: left;
     width: 709px;
     height: 277px;
-    padding: 50px 30px 30px 30px;
+    padding: 50px 30px 30px 0px;
     box-sizing: border-box;
 }
 
-.Section-App .SA-box4 {
+.box4 {
     float: right;
     width: 709px;
     height: 277px;
@@ -255,6 +254,12 @@ header .title{
 
 /*--SECTION HISTORY--*/
 
+.History {
+    border-bottom: 1px solid #dde1e3;
+    padding-bottom: 45px;
+}
+
+
 .History h2 {
     margin-top: 100px;
     margin-bottom: 30px;
@@ -329,3 +334,32 @@ header .title{
     padding-left: 7px;
 }
 
+/*--MORE CONTENT SECTION--*/ /*--REUTILICE LAS BOX CREADAS EN SA--*/
+
+.more-content img {
+    float: left;
+    margin-right: 70px;
+    margin-bottom: 70px;
+    margin-left: 0px;
+    margin-top: 20px;
+    width: 170px;
+    height: 170px;
+}
+
+.more-content h3 {
+    width: 450px;
+    margin-left: 150px;
+    padding-top: 20px;
+    font-size: 40px;
+    line-height: 47px;
+}
+
+.more-content ol {
+    padding-top: 20px;
+    padding-left: 255px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+}
