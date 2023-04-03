@@ -172,6 +172,12 @@ header .title{
 
 /*--SECTION CONTACT--*/
 
+.contact {
+    border-bottom: 1px solid #dde1e3;
+    padding-bottom: 70px;
+}
+
+
 .contact h2 {
     margin-top: 100px;
     margin-bottom: 30px;
@@ -245,3 +251,81 @@ header .title{
     font-size: 17px;
     color: #373867
 }
+
+
+/*--SECTION HISTORY--*/
+
+.History h2 {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.History .history-introduction p {
+    width: 1400px;
+    font: 15px;
+    color: rgba(55, 56, 103, 0.4);
+    border-left: 4px solid #373867;
+    padding-left: 25px;
+    line-height: 18px;
+}
+
+.history-box1 {
+    margin-top: 48px;
+    float: left;
+    width: 670px;
+    box-sizing: border-box;
+}
+
+.history-box1 h3 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    color:#373867;
+    margin-bottom: 45px;
+}
+
+.history-box1 p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: rgba(55, 56, 103, 0.4);
+    letter-spacing: 1px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 20px;
+}
+
+.history-box1 img {
+    margin-top: 60px;
+}
+
+.history-box2 {
+    margin-top: 65px;
+    float: right;
+    width: 670px;
+    box-sizing: border-box;
+}
+
+.history-box2 h3 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    color:#373867;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 26px;
+    padding-left: 7px;
+    margin-top: 10px;
+}
+
+.history-box2 p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: rgba(55, 56, 103, 0.4);
+    letter-spacing: 1px;
+    padding-top: 10px;
+    padding-left: 7px;
+}
+
