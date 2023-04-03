@@ -131,6 +131,13 @@ header .title{
     margin-top: 20px;
 }
 
+.Section-App p {
+    width: 570px;
+    line-height: 16px;
+}
+
+/*--BOXS--*/
+
 .box1 {
     float: left;
     width: 709px;
@@ -161,11 +168,6 @@ header .title{
     height: 277px;
     padding: 50px 30px 30px 30px;
     box-sizing: border-box;
-}
-
-.Section-App p {
-    width: 570px;
-    line-height: 16px;
 }
 
 
