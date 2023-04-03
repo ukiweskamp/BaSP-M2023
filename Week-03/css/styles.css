@@ -396,3 +396,16 @@ header .title{
     text-decoration: none;
     color: #AACE9B;
 }
+
+/*--FOOTER--*/ /*--REUTILIZO SOCIALMEDIA-IMAGES--*/
+
+footer {
+    margin: 45px 0px;
+    text-align: center;
+}
+
+footer p {
+    margin: 15px 0px;
+    font-weight: 500;
+    color: #6F6877;
+}
