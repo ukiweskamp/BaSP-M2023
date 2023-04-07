@@ -96,12 +96,11 @@ header .title {
     font-weight: bold;
     font-size: 17px;
     color: #373867
-    
 }
 
 .section-App {
-    border-bottom: 1px solid #dde1e3;
     padding-bottom: 70px;
+    border-bottom: 1px solid #dde1e3;
 }
 
 .section-App h2 {
@@ -173,6 +172,7 @@ header .title {
 }
 
 .my-form input {
+    margin-bottom: 30px;
     padding: 8px 0px;
     width: 450px;
     height: 30px;
@@ -180,7 +180,6 @@ header .title {
     color: #373867;
     border: 1px solid #373867;
     border-radius: 5px;
-    margin-bottom: 30px;
 }
 
 ::placeholder {
@@ -202,17 +201,17 @@ header .title {
 }
 
 .contact #button-send-it {
-        width: 130px;
-        height: 35px;
-        margin-left: 90px;
-        margin-top: 40px;
-        background-color: #AACE9B;
-        border-color: #AACE9B;
-        border-style: solid;
-        border-radius: 5px;
-        font-weight: bold;
-        font-size: 17px;
-        color: #373867
+    width: 130px;
+    height: 35px;
+    margin-left: 90px;
+    margin-top: 40px;
+    background-color: #AACE9B;
+    border-color: #AACE9B;
+    border-style: solid;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #373867
 }
 
 .contact #button-clear {
@@ -265,6 +264,7 @@ header .title {
 }
 
 .history-box1 p {
+    border-bottom: 1px solid #000000;
     padding-bottom: 20px;
     font-style: normal;
     font-weight: 400;
@@ -272,7 +272,6 @@ header .title {
     line-height: 18px;
     color: rgba(55, 56, 103, 0.4);
     letter-spacing: 1px;
-    border-bottom: 1px solid #000000;
 }
 
 .history-box1 img {
