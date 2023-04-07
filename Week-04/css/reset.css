@@ -20,11 +20,6 @@
    * Remove the margin in all browsers.
    */
 
-   * {
-    padding: 0px;
-    margin: 0px;
-    }
-  
   body {
     margin: 0;
   }
@@ -43,11 +38,13 @@
    */
   
   h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
     padding: 0px;
     margin: 0px;
+    font-weight: normal;
+
   }
+
+  
   
   /* Grouping content
      ========================================================================== */

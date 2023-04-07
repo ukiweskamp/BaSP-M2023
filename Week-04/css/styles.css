@@ -1,0 +1,78 @@
+body{
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #ffffff;
+    color: #373867;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 15px;
+ }
+
+/* GLOBAL */
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.socialmedia-images img{
+    width: 46px;
+    height: 46px;
+    margin-right: 14px;
+}
+
+
+/* HEADER */
+
+#header-content .container{
+    height: 80px;
+    border-bottom: 9px solid #AACE9B;
+}
+
+#header-content .logo a{
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: bolder;
+    color: #373867;
+    opacity: 0.4;
+}
+
+/* SIDEBAR */
+
+#main-section{
+    display: flex;
+    width: 100%;
+    background: rgba(170, 206, 155, 0.1);
+}
+
+#main-section .sidebar{
+    width: 25%;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.sidebar-form{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.sidebar-form input{
+    padding: 8px 0px 6px 15px;
+    height: 30px;
+    background-color: #ffffff;
+    color: #373867;
+    border: 1px solid #373867;
+    border-radius: 5px;
+}
+
+#main-section .image-content{
+    background-image: url("/assets/img/people-working-out-indoors-together-with-dumbbells-1.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 75%;
+    height: 710px;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
