@@ -2,19 +2,12 @@ body{
     margin-left: 50px;
     margin-right: 50px;
     background-color: #ffffff;
-    color: #373867;
+    color: rgb(55, 56, 103);
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 15px;
  }
 
 /* GLOBAL */
-
-.container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
 
 .socialmedia-images img{
     width: 46px;
@@ -22,10 +15,19 @@ body{
     margin-right: 14px;
 }
 
+*{
+box-sizing: border-box;
+}
+
+
 
 /* HEADER */
 
 #header-content .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     height: 80px;
     border-bottom: 9px solid #AACE9B;
 }
@@ -34,21 +36,77 @@ body{
     font-size: 30px;
     text-decoration: none;
     font-weight: bolder;
-    color: #373867;
-    opacity: 0.4;
+    color: rgba(55, 56, 103, 0.4);
 }
 
-/* SIDEBAR */
+
+#main-section-contenedor{
+    display: flex;
+    height: auto;
+    width: 100%;
+    padding-top: 30px;
+    margin-bottom: 800px;
+    background: rgba(170, 206, 155, 0.1);
+}
+
+
+.item-1{
+    width: 25%;
+    height: 850px;
+}
+
+
+.item-2{
+    background-color: rgba(32, 32, 32, 0.45);
+    background-image: url("/assets/img/people-working-out-indoors-together-with-dumbbells-1.png");
+    background-blend-mode: overlay;
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    width: 75%;
+    padding-left: 15px;
+}
+
+.item-2 .imagen-main-section{
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  MAIN SECTION
 
 #main-section{
     display: flex;
+    margin-top: 30px;
     width: 100%;
     background: rgba(170, 206, 155, 0.1);
 }
 
+/* SIDEBAR */
+
+/*
 #main-section .sidebar{
-    width: 25%;
-    box-sizing: border-box;
+    width: 100%;
     margin: 0px;
 }
 
@@ -70,7 +128,6 @@ body{
     background-image: url("/assets/img/people-working-out-indoors-together-with-dumbbells-1.png");
     background-repeat: no-repeat;
     background-size: 100%;
-    width: 75%;
     height: 710px;
     box-sizing: border-box;
     margin: 0px;
