@@ -15,6 +15,7 @@ body{
     margin-right: 14px;
 }
 
+
 *{
 box-sizing: border-box;
 }
@@ -39,8 +40,12 @@ box-sizing: border-box;
     color: rgba(55, 56, 103, 0.4);
 }
 
+.burger-button i{
+    font-size: 42px;
+}
 
-#main-section-contenedor{
+
+#main-section-container{
     display: flex;
     height: auto;
     width: 100%;
@@ -50,69 +55,9 @@ box-sizing: border-box;
 }
 
 
-.item-1{
+.sidebar{
     width: 25%;
     height: 850px;
-}
-
-
-.item-2{
-    background-color: rgba(32, 32, 32, 0.45);
-    background-image: url("/assets/img/people-working-out-indoors-together-with-dumbbells-1.png");
-    background-blend-mode: overlay;
-    background-repeat: no-repeat, repeat;
-    background-size: cover;
-    width: 75%;
-    padding-left: 15px;
-}
-
-.item-2 .imagen-main-section{
-    color: #fff;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*  MAIN SECTION
-
-#main-section{
-    display: flex;
-    margin-top: 30px;
-    width: 100%;
-    background: rgba(170, 206, 155, 0.1);
-}
-
-/* SIDEBAR */
-
-/*
-#main-section .sidebar{
-    width: 100%;
-    margin: 0px;
-}
-
-.sidebar-form{
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .sidebar-form input{
@@ -124,12 +69,19 @@ box-sizing: border-box;
     border-radius: 5px;
 }
 
-#main-section .image-content{
-    background-image: url("/assets/img/people-working-out-indoors-together-with-dumbbells-1.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    height: 710px;
-    box-sizing: border-box;
-    margin: 0px;
+
+.description-images{
+    background-color: rgba(32, 32, 32, 0.45);
+    background-image: url(/assets/img/people-working-out-indoors-together-with-dumbbells-1.png);
+    background-blend-mode: overlay;
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    width: 75%;
 }
+
+.description-images .imagen-main-section{
+    color: #fff;
+}
+
+
 
