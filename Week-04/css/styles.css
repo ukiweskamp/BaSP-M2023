@@ -1,61 +1,93 @@
+/* GLOBAL */
+
 body{
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
     background-color: #ffffff;
     color: rgb(55, 56, 103);
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 15px;
  }
 
-/* GLOBAL */
+*{
+    box-sizing: border-box;
+    }
 
 .socialmedia-images img{
-    width: 46px;
-    height: 46px;
-    margin-right: 14px;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
 }
-
-
-*{
-box-sizing: border-box;
-}
-
 
 
 /* HEADER */
 
-#header-content .container{
+.header-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
+    justify-content: space-between;
     height: 80px;
+    width: 100%;
     border-bottom: 9px solid #AACE9B;
 }
-
-#header-content .logo a{
-    font-size: 30px;
-    text-decoration: none;
-    font-weight: bolder;
-    color: rgba(55, 56, 103, 0.4);
+  
+.header .header-burger-button{
+    display: block;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+  
+.socialmedia-images {
+    display: flex;
+    align-items: center;    
+}
+  
+.socialmedia-images a {
+    height: 20px;
 }
 
-.burger-button i{
+.socialmedia-images img {
+    margin-right: 10px;
+}  
+  
+#header .header-title a{
+    margin-left: 20px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bolder;
+    color: rgba(55, 56, 103, 0.4)
+}
+
+.header-title {
+    justify-content: center;
+    flex: 1;
+    white-space: nowrap;
+  }
+
+
+.header-burger-button i{
     font-size: 42px;
 }
 
+/* MAIN SECTION */
 
-#main-section-container{
+/* HOME */
+
+/* SIDE BAR*/
+
+#home-section{
     display: flex;
     height: auto;
     width: 100%;
     padding-top: 30px;
-    margin-bottom: 800px;
+    margin-bottom: 40px;
     background: rgba(170, 206, 155, 0.1);
+    border-bottom: 1px solid #dde1e3;
 }
 
 
-.sidebar{
+.home-sidebar{
+    display: none;
     width: 25%;
     height: 850px;
 }
@@ -70,18 +102,123 @@ box-sizing: border-box;
 }
 
 
-.description-images{
-    background-color: rgba(32, 32, 32, 0.45);
-    background-image: url(/assets/img/people-working-out-indoors-together-with-dumbbells-1.png);
-    background-blend-mode: overlay;
-    background-repeat: no-repeat, repeat;
-    background-size: cover;
-    width: 75%;
+/* HOME SECTION */
+
+
+.home-description h2{
+    margin: 0px;
+    font-size: 40px;
 }
 
-.description-images .imagen-main-section{
-    color: #fff;
+.home-description h3{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    opacity: 0.4;
+}
+
+.home-description .img-mobile img{
+    margin-top: 38px;
+    margin-bottom: 38px;
+    width: 100%;
+    transform: scaleX(-1);
+}
+
+.home-description p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.065em;
+    opacity: 0.4;
+}
+
+button{
+    display: none;
+    width: 150px;
+    height: 50px;
+    background-color: #AACE9B;
+    border-color: #AACE9B;
+    border-style: solid;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #373867
 }
 
 
+/* FEATURES-SECTION */
 
+.features-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.features-section h2{
+    width: 200px;
+    margin-bottom: 65px;
+    padding-bottom: 20px;
+    border-bottom: 5px solid #AACE9B;
+    font-size: 30px;    
+}
+
+.features-section h3{
+    font-size: 40px;
+}
+
+.features-section p{
+    line-height: 16px;
+}
+
+.features-box .box{
+    margin-bottom: 35px;
+}
+
+.features-box .box img{
+    width: 81px;
+    height: 81px;
+}
+
+
+  @media screen and (min-width: 769px) {
+
+    body{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .header-burger-button {
+      display: none;
+    }
+  
+    .header-title {
+        margin-right: auto;
+    }
+  
+    .socialmedia-images {
+        margin-left: auto;
+    }
+
+    .socialmedia-images img {
+        width: 40px;
+        height: 40px;
+      }
+
+    #header .header-title a{
+        margin-left: 0px;
+        font-size: 30px;
+    }
+
+    .home-sidebar{
+        display: block;
+    }
+
+    .img-mobile img{
+        display: none;
+    }
+
+  }
+
+ 
+    
