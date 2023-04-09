@@ -1,5 +1,9 @@
 /* GLOBAL */
 
+*{
+    box-sizing: border-box;
+    }
+
 body{
     margin-left: 10px;
     margin-right: 10px;
@@ -7,11 +11,10 @@ body{
     color: rgb(55, 56, 103);
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 15px;
+    min-width: 380px;
  }
 
-*{
-    box-sizing: border-box;
-    }
+
 
 .socialmedia-images img{
     width: 20px;
@@ -132,7 +135,7 @@ body{
     opacity: 0.4;
 }
 
-button{
+.home-description button{
     display: none;
     width: 150px;
     height: 50px;
@@ -147,6 +150,10 @@ button{
 
 
 /* FEATURES-SECTION */
+
+.features-section{
+    border-bottom: 1px solid #dde1e3;
+}
 
 .features-box{
     display: flex;
@@ -181,7 +188,93 @@ button{
 }
 
 
-  @media screen and (min-width: 769px) {
+/* CONTACT */
+
+.contact-section{
+    margin-bottom: 800px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #dde1e3;
+}
+
+.contact-section h2 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.form-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+label{
+    font-weight: bold;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 100px;
+    white-space: nowrap;
+  }
+
+input[type="text"], input[type="email"], input[list="Reason"], textarea {
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #ffffff;
+    color: #373867;
+    border: 1px solid #373867
+}
+
+textarea {
+    margin-top: 15px;
+}
+
+.contact-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-section #button-send-it {
+    width: 130px;
+    height: 35px;
+    margin-top: 40px;
+    background-color: #AACE9B;
+    border-color: #AACE9B;
+    border-style: solid;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #373867
+}
+
+.contact-section #button-clear {
+    width: 130px;
+    height: 35px;
+    margin-top: 40px;
+    background-color: #ffffff;
+    border-color: #373867;
+    border-style: solid;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #373867
+}
+
+
+ @media screen and (min-width: 1025px) {
 
     body{
         margin-left: 50px;
