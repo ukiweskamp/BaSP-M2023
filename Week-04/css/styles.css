@@ -11,17 +11,13 @@ body{
     color: rgb(55, 56, 103);
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 15px;
-    min-width: 450px;
  }
-
-
 
 .socialmedia-images img{
     width: 20px;
     height: 20px;
     margin-right: 10px;
 }
-
 
 /* HEADER */
 
@@ -67,19 +63,16 @@ body{
     white-space: nowrap;
   }
 
-
 .header-burger-button i{
     font-size: 42px;
 }
 
 /* MAIN SECTION */
 
-/* HOME */
-
-/* SIDE BAR*/
 
 #home-section{
     display: flex;
+    flex-direction: column;
     height: auto;
     width: 100%;
     padding-top: 30px;
@@ -88,6 +81,7 @@ body{
     border-bottom: 1px solid #dde1e3;
 }
 
+/* SIDE BAR*/
 
 .home-sidebar{
     display: none;
@@ -104,9 +98,12 @@ body{
     border-radius: 5px;
 }
 
-
 /* HOME SECTION */
 
+.home-description{
+    display: flex;
+    flex-direction: column;
+}
 
 .home-description h2{
     margin: 0px;
@@ -147,8 +144,7 @@ body{
     font-size: 17px;
     color: #373867
 }
-
-
+    
 /* FEATURES-SECTION */
 
 .features-section{
@@ -186,7 +182,6 @@ body{
     width: 81px;
     height: 81px;
 }
-
 
 /* CONTACT-SECTION */
 
@@ -272,7 +267,6 @@ textarea {
     color: #373867
 }
 
-
 /* HISTORY-SECTION*/
 
 .history-section {
@@ -325,9 +319,7 @@ textarea {
     max-height: 277px;
 }
 
-
 /* CONTENT SECTION */
-
 
 .content-box{
     display: flex;
@@ -358,8 +350,6 @@ ol {
     font-size: 14px;
     line-height: 16px;
   }
-
-
 
 /* PAGINATION */
 
@@ -402,7 +392,6 @@ ol {
     color: #AACE9B;
 }
 
-
 /* FOOTER */
 
 footer {
@@ -421,7 +410,16 @@ footer .socialmedia-images {
     justify-content: center;
 }
 
-/*
+
+/* MEDIA QUERY LAPTOR*/
+
+@media screen and (min-width: 601px) {
+    .home-description :nth-child(3){
+        order: 1;
+    }
+}
+
+/* MEDIA QUERY DESKTOP 
 
  @media screen and (min-width: 1025px) {
 
