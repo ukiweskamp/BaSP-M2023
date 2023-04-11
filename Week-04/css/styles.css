@@ -74,19 +74,21 @@ body{
     display: flex;
     flex-direction: column;
     height: auto;
-    width: 100%;
     padding-top: 30px;
+    padding-bottom: 30px;
     margin-bottom: 40px;
-    background: rgba(170, 206, 155, 0.1);
     border-bottom: 1px solid #dde1e3;
+    background-color: rgba(170, 206, 155, 0.1);
 }
 
 /* SIDE BAR*/
 
 .home-sidebar{
     display: none;
-    width: 25%;
-    height: 850px;
+}
+
+.home-description{
+    display: flex;
 }
 
 .sidebar-form input{
@@ -114,7 +116,7 @@ body{
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    opacity: 0.4;
+    color: rgba(55, 56, 103, 0.4);
 }
 
 .home-description .img-mobile img{
@@ -129,7 +131,7 @@ body{
     font-size: 14px;
     line-height: 18px;
     letter-spacing: 0.065em;
-    opacity: 0.4;
+    color: rgba(55, 56, 103, 0.4);
 }
 
 .home-description button{
@@ -366,6 +368,8 @@ ol {
     flex-direction: row;
     justify-content: center;
     text-align: center;
+    margin-right: auto;
+    margin-left: auto;
     padding-left: 0px;
 }
 
@@ -467,8 +471,40 @@ footer .socialmedia-images img {
     flex-direction: row;
   }
 
+.content-box .box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px;
+}   
 
-/* MEDIA QUERY DESKTOP 
+.content-box .box-right {
+    margin-left: 20px;
+    text-align: left;
+}
+
+.content-box ol{
+    list-style-position: inside;
+    align-items: stretch;
+    text-align: left;
+}
+
+.content-box .box h3{
+    margin-top: 0px;
+    margin-bottom: 15px;
+    text-align: left;
+
+}
+
+.content-box .box img{
+    width: 130px;
+    height: 130px;
+    margin-right: 50px;
+}  
+
+}
+
+
+/* MEDIA QUERY DESKTOP */
 
  @media screen and (min-width: 1025px) {
 
@@ -492,7 +528,7 @@ footer .socialmedia-images img {
     .socialmedia-images img {
         width: 40px;
         height: 40px;
-      }
+    }
 
     #header .header-title a{
         margin-left: 0px;
@@ -500,13 +536,132 @@ footer .socialmedia-images img {
     }
 
     .home-sidebar{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 20px;
+        width: 30%;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+
+    .sidebar-form li{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgb(55, 56, 103);
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    .sidebar-form a, ul{
+        text-decoration: none;
+        list-style: none;
+        padding-left: 0px;
+        
+    }
+
+    nav a:visited {
+        color: inherit; 
+        text-decoration: inherit; 
+    }
+
+    .sidebar-form input{
+        padding: 8px 0px 6px 15px;
+        height: 30px;
+        background-color: #ffffff;
+        color: #373867;
+        border: 1px solid #373867;
+        border-radius: 5px;
+    }
+
+    .home-sidebar h3{
+        padding-bottom: 5px;
+        margin-bottom: 30px;
+        border-bottom: 4px solid rgb(170, 206, 155);
+        font-size: 1.8rem;
+    }
+
+
+    .home-sidebar p{
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 14px;
+        color: #373867;
+    }
+
+    .home-sidebar .contact-us-a {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgb(55, 56, 103);
+
+    }
+
+    .home-sidebar .contact-us-a a{
+        font-size: 10px;
+        padding-left: 10px;
     }
 
     .img-mobile img{
         display: none;
+        width: 25%;
+        height: 850px;
+    }
+
+    #home-section{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .home-description{
+        background-color: rgba(32, 32, 32, 0.45);
+        background-image: url("../../assets/img/people-working-out-indoors-together-with-dumbbells-1.png");
+        background-blend-mode: overlay;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .home-description {
+        color: #ffffff;
+        padding-left: 30px;
+        padding-top: 60px;
+    }
+
+    .home-description > h2{
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 47px;
+    }
+
+    .home-description > h3{
+        size: 30px;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .home-description > p{
+        margin-top: 60px;
+        width: 55%;
+        font-size: 20px;
+        line-height: 30px;
+        color: #ffffff;
+    }
+
+    .home-description button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+        margin-bottom: 60px;
     }
 
     .pagination li:nth-child(5), .pagination li:nth-child(6) {
-    display: list-item;
+        display: list-item;
     }
+ }
