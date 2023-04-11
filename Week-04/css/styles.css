@@ -148,6 +148,8 @@ body{
 /* FEATURES-SECTION */
 
 .features-section{
+    display: flex;
+    flex-direction: column;
     border-bottom: 1px solid #dde1e3;
 }
 
@@ -156,7 +158,6 @@ body{
     flex-direction: column;
     justify-content: center;
 }
-
 
 .features-section h2{
     width: 200px;
@@ -408,16 +409,64 @@ footer p {
 
 footer .socialmedia-images {
     justify-content: center;
+    margin-bottom: 40px;
+}
+
+footer .socialmedia-images img {
+    width: 40px;
+    height: 40px;
 }
 
 
 /* MEDIA QUERY LAPTOR*/
 
 @media screen and (min-width: 601px) {
-    .home-description :nth-child(3){
-        order: 1;
-    }
+
+.home-description :nth-child(3){
+    order: 1;
 }
+
+.features-box .box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px;
+}   
+
+.features-box .box-right {
+    margin-left: 20px;
+}
+
+.features-box .box h3{
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+.features-box .box img{
+    width: 130px;
+    height: 130px;
+}
+
+.contact-button{
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.contact-section #button-send-it {
+    width: 140px;
+    height: 47px;
+}
+  
+.contact-section #button-clear {
+    width: 140px;
+    height: 47px;
+    margin-right: 90px;
+  }
+
+.img-tablet{
+    display: flex;
+    flex-direction: row;
+  }
+
 
 /* MEDIA QUERY DESKTOP 
 
