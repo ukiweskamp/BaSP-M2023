@@ -40,7 +40,7 @@ We developed and styling the landing page for mobile first from 0 using flexbox 
         * styles.css file
     2. index.html file (updated)
 
-You can see the project github page in: [Link-page index.html](ukiweskamp.github.io/BaSP-M2023/Week-04/index.html "Index")
+You can see the project github page in: [Link-page index.html](https://ukiweskamp.github.io/BaSP-M2023/Week-04/index.html "Index")
 
 ---
 
