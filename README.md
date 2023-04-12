@@ -29,6 +29,21 @@ Files added:
     3. index.html file (updated)
 ---
 
+## Week-04
+### **MegaRocket Landing Page Responsive**
+We developed and styling the landing page for mobile first from 0 using flexbox to make it responsive across any viewport
+### Week-04
+    1. 'CSS' folder
+        * header.css file
+        * footer.css file
+        * reset.css file
+        * styles.css file
+    2. index.html file (updated)
+
+You can see the project github page in: [Link-page index.html](https://https://ukiweskamp.github.io/BaSP-M2023/Week-04/index.html "Index")
+
+---
+
 
 ## Authors
 Eugenio Weskamp
