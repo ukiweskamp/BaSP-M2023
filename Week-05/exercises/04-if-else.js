@@ -39,4 +39,4 @@ if (age < 2){
 } else {
     alert('Exercise 4-b: Anciano');
 }
-console.log('Exercise 4-a: ' + age);
+console.log('Exercise 4-b: ' + age);
