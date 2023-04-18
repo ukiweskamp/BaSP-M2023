@@ -45,10 +45,10 @@ body{
 .sidebar-form input{
     padding: 8px 0px 6px 15px;
     height: 30px;
-    background-color: #ffffff;
-    color: #373867;
     border: 1px solid #373867;
     border-radius: 5px;
+    background-color: #ffffff;
+    color: #373867;
 }
 
 /* HOME SECTION */
@@ -172,22 +172,22 @@ body{
 }
   
 label{
-    font-weight: bold;
     margin-right: 10px;
     margin-bottom: 20px;
     margin-top: 10px;
     width: 100px;
     white-space: nowrap;
+    font-weight: bold;
 }
 
 input[type="text"], input[type="email"], input[list="Reason"], textarea {
     padding: 10px;
     width: 100%;
     border-radius: 5px;
+    border: 1px solid #373867;
     font-size: 16px;
     background-color: #ffffff;
     color: #373867;
-    border: 1px solid #373867
 }
 
 textarea {
@@ -242,9 +242,9 @@ textarea {
 
 .history-introduction p {
     width: 100%;
-    font: 14px;
     padding-left: 25px;
     border-left: 4px solid #373867;
+    font: 14px;
     color: rgba(55, 56, 103, 0.4);
     line-height: 18px;
 }
@@ -364,7 +364,6 @@ ol {
     color: #AACE9B;
 }
 
-
 /* MEDIA QUERY TABLET*/
 
 @media screen and (min-width: 601px) {
@@ -421,8 +420,8 @@ ol {
     }   
 
     .content-box .box-right {
-        margin-left: 20px;
         text-align: left;
+        margin-left: 20px;
     }
 
     .content-box ol{
@@ -432,9 +431,9 @@ ol {
     }
 
     .content-box .box h3{
+        text-align: left;
         margin-top: 0px;
         margin-bottom: 15px;
-        text-align: left;
 
     }
 
@@ -443,8 +442,6 @@ ol {
         height: 130px;
         margin-right: 50px;
     }  
-    
-
     }
 
 /* MEDIA QUERY DESKTOP */
@@ -460,8 +457,8 @@ ol {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding-top: 20px;
         width: 30%;
+        padding-top: 20px;
         padding-right: 30px;
         padding-left: 30px;
     }
@@ -475,9 +472,9 @@ ol {
     }
 
     .sidebar-form a, ul{
+        padding-left: 0px;
         text-decoration: none;
         list-style: none;
-        padding-left: 0px;
         
     }
 
@@ -521,10 +518,10 @@ ol {
     }
 
     .home-sidebar .contact-us-a a{
-        font-size: 10px;
-        padding-left: 10px;
         text-decoration: none;
         list-style: none;
+        padding-left: 10px;
+        font-size: 10px;
     }
 
     .img-mobile img{
@@ -539,13 +536,13 @@ ol {
     }
 
     .home-description{
+        margin-top: 20px;
+        margin-bottom: 30px;
         background-color: rgba(32, 32, 32, 0.45);
         background-image: url("../../assets/img/people-working-out-indoors-together-with-dumbbells-1.png");
         background-blend-mode: overlay;
         background-repeat: no-repeat;
         background-size: cover;
-        margin-top: 20px;
-        margin-bottom: 30px;
     }
 
     .home-description {
@@ -658,7 +655,4 @@ ol {
     .history-box2 {
         width: 45%;
     }
-
-
-
  }

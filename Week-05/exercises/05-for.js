@@ -1,5 +1,5 @@
 // ******** 5 - For ********
-console.log('--EXERCISE 5: For');
+console.log('--EXERCISE 5: FOR');
 
 /* Exercise-5a: Crear un array que contenga 5 palabras y recorrer dicho array utilizando un bucle for de JavaScript para
 mostrar una alerta utilizando cada una de las palabras. */
@@ -30,6 +30,7 @@ for(var i = 0; i < a.length; i++){
     sentence += a[i] + ' ';
 }
 alert(sentence);
+console.log(sentence);
 
 /* Exercise-5d: Crear una array vacío y con un bucle for de 10 repeticiones. Llenar el array con el número de la
 repetición, es decir que al final de la ejecución del bucle for debería haber 10 elementos dentro del array, desde el
@@ -40,4 +41,4 @@ var a = []
 for (var i = 0; i < 10; i++){
     a.push(i);
 }
-console.log(a)
+console.log(a);
