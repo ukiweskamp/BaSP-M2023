@@ -44,6 +44,24 @@ You can see the project github page in: [Link-page index.html](https://ukiweskam
 
 ---
 
+## Week-05
+### **MegaRocket Introduction to JS**
+This week, to learn JavaScript we focus on doing exercises divided into 6 files.
+### Week-04
+1. 'exercises' folder
+    * 01_variables_and_operators.js file
+    * 02_strings.js file
+    * 03_arrays.js file
+    * 04_if_else.js file
+    * 05_for.js file
+    * 06_functions.js file
+2. index.html file (new)
+
+You can see the project github page in: [Link-page index.html](https://ukiweskamp.github.io/BaSP-M2023/Week-05/index.html "Index")
+
+---
+
+
 
 ## Authors
 Eugenio Weskamp
