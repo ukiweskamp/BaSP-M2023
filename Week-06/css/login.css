@@ -100,6 +100,17 @@ input[type="text"], input[type="password"] {
     text-decoration: none;
 }
 
+.button-log-in {
+    width: 130px;
+    height: 65px;
+    background-color: #AACE9B;
+    border-color: #AACE9B;
+    border-style: solid;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #373867
+}
 
 @media screen and (min-width: 1025px) {
 

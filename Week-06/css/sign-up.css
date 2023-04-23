@@ -81,7 +81,6 @@ input[type="text"], input[type="password"], input[type="date"] {
 .box1 a{
     flex-wrap: nowrap;
     padding: 20px 40px;
-    margin: 25px;
     background-color: #ffffff;
     border-color: #373867;
     border-style: solid;
@@ -91,6 +90,20 @@ input[type="text"], input[type="password"], input[type="date"] {
     color: #373867;
     text-decoration: none;
 }
+
+.button-sign-up {
+    width: 130px;
+    height: 65px;
+    margin-left: 25px;
+    background-color: #AACE9B;
+    border-color: #AACE9B;
+    border-style: solid;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 17px;
+    color: #373867
+}
+
 
 
 @media screen and (min-width: 1025px) {
