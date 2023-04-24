@@ -160,7 +160,7 @@ return birthdayValidation;
 }
 
 function birthdayFocus(){
-    errorBirthday = '';
+    errorBirthday.innerHTML = ' ';
 }
 
 // Phone: Only Numbers. Must contains 10 numbers.
