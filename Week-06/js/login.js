@@ -39,7 +39,7 @@ function passwordBlur() {
     var containsNumbers = false;
     if (inputPassword.value.length < 8 || inputPassword.value.indexOf(' ') !== -1) {
         inputPassword.classList.add("error");
-        errorPassword.innerHTML = 'Enter at least 8 characters.';
+        errorPassword.innerHTML = '* Enter at least 8 characters.';
         return passwordValidate;
     } else {
         for (let i = 0; i < inputPassword.value.length; i++) {
@@ -55,7 +55,7 @@ function passwordBlur() {
                 passwordValidate = true;
             } else {
                 errorPassword.classList.add("error");
-                errorPassword.innerHTML = 'Password have to contain numbers and letters only.';
+                errorPassword.innerHTML = '* Password have to contain numbers and letters only.';
                 passwordValidate = false;
             }
         }
@@ -72,7 +72,9 @@ submitButton.addEventListener('click', submitEvent);
 
 function submitEvent() {
     if (emailBlur() && passwordBlur()) {
-        alert('Login successful! Email= ' + inputEmail.value + ' Password= ' + inputPassword.value);
+        alert('Login successful!'+ '\n' +
+        'Email=' + inputEmail.value + '\n' +
+        'Password= ' + inputPassword.value);
     } else {
         alert('Please check your information is correct.');
     }

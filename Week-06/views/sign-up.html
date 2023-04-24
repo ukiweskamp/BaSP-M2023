@@ -64,6 +64,7 @@
                 name="name"
                 placeholder="Type your name"
               />
+              <div id="error-name" class="error"></div>
             </div>
             <div class="form-field">
               <label for="lastname">Last name:</label>
@@ -73,19 +74,22 @@
                 name="lastname"
                 placeholder="Type your lastname"
               />
+              <div id="error-last-name" class="error"></div>
             </div>
             <div class="form-field">
               <label for="dni">ID:</label>
               <input type="text" id="id" name="ID" placeholder="Type your ID" />
+              <div id="error-id" class="error"></div>
             </div>
             <div class="form-field">
-              <label for="birthdate">Birthdate:</label>
+              <label for="birthday">Birthday:</label>
               <input
                 type="date"
-                id="birthdate"
-                name="birthdate"
-                placeholder="Type your Birthdate"
+                id="birthday"
+                name="birthday"
+                placeholder="Type your birthday"
               />
+              <div id="error-birthday" class="error"></div>
             </div>
             <div class="form-field">
               <label for="phone">Phone:</label>
@@ -95,9 +99,8 @@
                 name="phone"
                 placeholder="Type your Phone"
               />
+              <div id="error-phone" class="error"></div>
             </div>
-          </div>
-          <div class="box-form2">
             <div class="form-field">
               <label for="address">Address:</label>
               <input
@@ -106,7 +109,10 @@
                 name="address"
                 placeholder="Type your Address"
               />
+              <div id="error-address" class="error"></div>
             </div>
+          </div>
+          <div class="box-form2">
             <div class="form-field">
               <label for="address">Location:</label>
               <input
@@ -115,6 +121,7 @@
                 name="location"
                 placeholder="Type your Location"
               />
+              <div id="error-location" class="error"></div>
             </div>
             <div class="form-field">
               <label for="address">Zip Code:</label>
@@ -124,6 +131,17 @@
                 name="zipcode"
                 placeholder="Type your Zip Code"
               />
+              <div id="error-zipcode" class="error"></div>
+            </div>
+            <div class="form-field">
+              <label for="email">Email:</label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Type your Email"
+              />
+              <div id="error-email" class="error"></div>
             </div>
             <div class="form-field">
               <label for="password">Password:</label>
@@ -133,15 +151,17 @@
                 name="password"
                 placeholder="Type your password"
               />
+              <div id="error-password" class="error"></div>
             </div>
             <div class="form-field">
-              <label for="password">Repeat your password:</label>
+              <label for="repeat-password">Repeat your password:</label>
               <input
                 type="password"
                 id="repeat-password"
                 name="password"
                 placeholder="Type your password again"
               />
+              <div id="error-repeat-password" class="error"></div>
             </div>
           </div>
         </div>
