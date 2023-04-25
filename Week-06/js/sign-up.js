@@ -33,6 +33,7 @@ var errorRepeatPassword = document.getElementById('error-repeat-password');
 // FUNCTIONS
 const arrayLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 const arrayNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 
 // Events
 nameInput.addEventListener('blur', nameBlur);
@@ -259,6 +260,49 @@ function locationBlur () {
 function locationFocus() {
     errorLocation.innerHTML = '';
 }
+
+// Zipcode: Numbers only. Must contain between 4 and 5 characters.
+
+function zipCodeBlur(){
+    if(zipCode.value.length < 4 || zipCode.value.length > 5 || zipCode.value == ""){
+        zipCode.classList.add("error");
+        errorZipCode.innerHTML = "Must contain between 4 and 5 characters."
+        zipcodeValidation = false;
+    } else {
+        if (isNaN(zipCode.value)) {
+            zipCode.classList.add("error");
+            errorZipCode.innerHTML = "Can only contains numbers."
+            zipcodeValidation = false;
+        } else {
+            errorZipCode.innerHTML = "";
+            zipcodeValidation = true;
+        }
+    }
+    return zipcodeValidation;
+}
+
+function zipCodeFocus() {
+    errorZipCode.innerHTML = '';
+}
+
+// Email: RegEx
+
+function emailBlur() {
+    if(emailExpression.test(email.value)) {
+        emailValidation = true;
+    } else {
+        email.classList.add("error");
+        errorEmail.innerHTML = '* Please, enter a valid email.';
+        emailValidation = false;
+    }
+    return emailValidation;
+}
+
+function emailFocus(){
+    errorEmail.innerHTML = ' ';
+}
+
+
 
 }
 
