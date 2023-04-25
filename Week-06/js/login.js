@@ -25,6 +25,15 @@ function emailBlur() {
     }
     return emailValidate;
 }
+
+var emailInput = document.getElementById('inputEmail');
+
+emailInput.addEventListener('change', function() {
+  console.log(emailBlur());
+});
+
+
+
 function emailFocus(){
     errorEmail.innerHTML = ' ';
 }

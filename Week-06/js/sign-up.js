@@ -302,7 +302,91 @@ function emailFocus(){
     errorEmail.innerHTML = ' ';
 }
 
+// Password: At least 8 characters. Must contain numbers and letters.
 
+function passwordBlur() {
+    var containsLetters = false;
+    var containsNumbers = false;
+    if (password.value.length < 8 || password.value.indexOf(' ') !== -1) {
+        password.classList.add("error");
+        errorPassword.innerHTML = '* Enter at least 8 characters.';
+        return passwordValidation;
+    } else {
+        for (let i = 0; i < password.value.length; i++) {
+            var letter = password.value[i];
+            if (arrayLetters.includes(letter.toLowerCase())){
+                containsLetters = true;
+            }
+            if (arrayNumbers.includes(letter)) {
+                containsNumbers = true;
+            }
+            if (containsLetters && containsNumbers) {
+                errorPassword.innerHTML = " ";
+                passwordValidation = true;
+            } else {
+                errorPassword.classList.add("error");
+                errorPassword.innerHTML = '* Password have to contain numbers and letters only.';
+                passwordValidation = false;
+            }
+        }
+    }
+    return passwordValidation;
+}
+function passwordFocus() {
+    errorPassword.innerHTML = ' ';
+}
+
+function repeatPasswordBlur() {
+    if (repeatPassword.value !== password.value || repeatPassword.value == ""){
+        repeatPassword.classList.add("error");
+        errorRepeatPassword.innerHTML = "* Password must coincide.'";
+        repeatPasswordValidation = false;
+    } else {
+        errorRepeatPassword.innerHTML = "";
+        repeatPasswordValidation = true;
+    }
+    return passwordValidation
+}
+
+function repeatPasswordFocus() {
+    errorRepeatPassword.innerHTML = ' ';
+}
+
+// Button validation
+var submitButton = document.getElementById('submit');
+submitButton.addEventListener('click', submitEvent);
+
+function submitEvent() {
+    if (
+        nameBlur() &&
+        lastNameBlur() &&
+        idBlur() &&
+        birthdayBlur() &&
+        phoneBlur() &&
+        addressBlur() &&
+        locationBlur() &&
+        zipCodeBlur() &&
+        emailBlur() &&
+        passwordBlur() &&
+        repeatPasswordBlur)
+        {
+            alert('Sign up successful!' + '\n'
+            + 'Name: ' + nameInput.value + '\n'
+            + 'Lastname: ' + lastName.value + '\n'
+            + 'Id: ' + id.value + '\n'
+            + 'Birthday: ' + birthday.value + '\n'
+            + 'Phone Number: ' + phone.value + '\n'
+            + 'Address: ' + address.value + '\n'
+            + 'Location: ' + locationInput.value + '\n'
+            + 'Zipcode: ' + zipCode.value + '\n'
+            + 'Email: ' + email.value + '\n'
+            + 'Password: ' + password.value + '\n'
+            + 'Repeat Password: ' + repeatPassword.value + '\n'
+            + 'Please, confirm.');
+        } else {
+        alert('Please check your information is correct.');
+    }
+}
 
 }
 
