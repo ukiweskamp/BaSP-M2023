@@ -30,6 +30,10 @@ var errorEmail = document.getElementById('error-email');
 var errorPassword = document.getElementById('error-password');
 var errorRepeatPassword = document.getElementById('error-repeat-password');
 
+// FUNCTIONS
+const arrayLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+const arrayNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
 // Events
 nameInput.addEventListener('blur', nameBlur);
 nameInput.addEventListener('focus', nameFocus);
@@ -43,8 +47,8 @@ phone.addEventListener('blur', phoneBlur);
 phone.addEventListener('focus', phoneFocus);
 address.addEventListener('blur', addressBlur);
 address.addEventListener('focus', addressFocus);
-locationInput.addEventListener('blur', cityBlur);
-locationInput.addEventListener('focus', cityFocus);
+locationInput.addEventListener('blur', locationBlur);
+locationInput.addEventListener('focus', locationFocus);
 zipCode.addEventListener('blur', zipCodeBlur);
 zipCode.addEventListener('focus', zipCodeFocus);
 email.addEventListener('blur', emailBlur);
@@ -54,13 +58,22 @@ password.addEventListener('focus', passwordFocus);
 repeatPassword.addEventListener('blur', repeatPasswordBlur);
 repeatPassword.addEventListener('focus', repeatPasswordFocus);
 
-// FUNCTIONS
-var arrayLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-const arrayNumbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+// Validation variables
+var nameValidation = false;
+var lastNameValidation = false;
+var idValidation = false;
+var birthdayValidation = false;
+var phoneValidation = false;
+var addressValidation = false;
+var locationValidation = false;
+var zipcodeValidation = false;
+var emailValidation = false;
+var passwordValidation = false;
+var repeatPasswordValidation = false;
+
 
 // Name: Only Letters. 3 letters min.
 function nameBlur() {
-    var arrayLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     if(nameInput.value.length < 3 || nameInput.value == '') {
         nameInput.classList.add("error");
         errorName.innerHTML = '* Must contain at least 3 characters.';
@@ -87,7 +100,6 @@ function nameFocus(){
 
 // Last Name: Only Letters. 3 letters min.
 function lastNameBlur() {
-    var arrayLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     if (lastName.value.length < 3 || lastName.value == '') {
         lastName.classList.add("error");
         errorLastName.innerHTML = "* Must contain at least 3 characters."
@@ -135,7 +147,7 @@ function idFocus() {
     errorId.innerHTML = " ";
 }
 
-// Date of birth: dd/mm/yyyy. > 16 years.
+// Birthday: dd/mm/yyyy. > 16 years.
 
 
 function birthdayBlur(){
@@ -148,7 +160,7 @@ function birthdayBlur(){
 } else {
     age = years;
 }
-if (age <= 16){
+if (age <= 16 || birthday.value == ""){
     birthday.classList.add("error");
     errorBirthday.innerHTML = "* You must be over 16 years old.";
     birthdayValidation = false;
@@ -168,7 +180,7 @@ function birthdayFocus(){
 function phoneBlur() {
     if(phone.value.length !== 10 || phone.value == '' || isNaN(phone.value)){
         phone.classList.add("error");
-        errorPhone.innerHTML = 'Must contain 10 characters and numbers only.';
+        errorPhone.innerHTML = '* Must contain 10 characters and numbers only.';
         phoneValidation = false;
     } else {
         errorPhone.innerHTML = " "
@@ -181,4 +193,72 @@ function phoneFocus() {
     errorPhone.innerHTML = '';
 }
 
+// Address: At least 5 characters. Must contain letters and numbers with a space between.
+
+function addressBlur() {
+    var containsLetters = false;
+    var containsNumbers = false;
+    if (address.value.length < 5 || address.value === "") {
+        address.classList.add("error");
+        errorAddress.innerHTML = '* At least 5 characters.';
+        addressValidation = false;
+    } else {
+        for (let i = 0; i < address.value.length; i++) {
+            const reading = address.value[i];
+            if (arrayLetters.includes(reading.toLowerCase())) {
+                containsLetters = true;
+            } if (arrayNumbers.includes(reading)) {
+                containsNumbers = true;
+            }
+            const spaceBetween = address.value.indexOf(" ");
+            if (containsLetters && containsNumbers && spaceBetween > 0 && spaceBetween < address.value.length -1) {
+                errorAddress.innerHTML = '';
+                addressValidation = true;
+            } else {
+                address.classList.add("error");
+                errorAddress.innerHTML = '* Must contain letters and numbers separated by a space.';
+                addressValidation = false;
+            }
+        }
+    }
+    return addressValidation;
 }
+
+function addressFocus() {
+    errorAddress.innerHTML = '';
+}
+
+// Location: Alphanumeric text. At least 3 letters.
+
+function locationBlur () {
+    var containsLetter = false;
+    if(locationInput.value.length < 5 || locationInput == ""){
+        locationInput.classList.add("error");
+        errorLocation.innerHTML = "* Must contain at least 5 characters";
+        locationValidation = false
+    } else {
+        for (let i = 0; i < locationInput.value.length; i++) {
+            const reading = locationInput.value[i];
+            if(arrayLetters.includes(reading.toLowerCase())){
+                containsLetter = true
+            }
+            if (containsLetter) {
+                errorLocation.innerHTML = "";
+                locationValidation = true;
+            }
+            else {
+                locationInput.classList.add("error");
+                errorLocation.innerHTML = "* Must contain letters";
+                locationValidation = false;
+            }
+        }
+    }
+    return locationValidation;
+}
+
+function locationFocus() {
+    errorLocation.innerHTML = '';
+}
+
+}
+
