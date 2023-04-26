@@ -1,7 +1,5 @@
 window.onload = function() {
 
-console.log('hola')
-
 // VARIABLES
 
 var nameInput = document.getElementById('name');
@@ -345,7 +343,7 @@ function repeatPasswordBlur() {
         errorRepeatPassword.innerHTML = "";
         repeatPasswordValidation = true;
     }
-    return passwordValidation
+    return repeatPasswordValidation
 }
 
 function repeatPasswordFocus() {
@@ -368,7 +366,7 @@ function submitEvent() {
         zipCodeBlur() &&
         emailBlur() &&
         passwordBlur() &&
-        repeatPasswordBlur)
+        repeatPasswordBlur() )
         {
             alert('Sign up successful!' + '\n'
             + 'Name: ' + nameInput.value + '\n'
