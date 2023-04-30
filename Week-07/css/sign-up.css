@@ -108,6 +108,50 @@ input[type="text"], input[type="password"], input[type="date"] {
     color: red;
 }
 
+/* MODAL */
+.modal {
+    position: fixed;
+    display: none;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 1;
+    overflow: auto;
+}
+.p-container {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color:rgb(55, 56, 103);
+    font-weight: 500;
+}
+.modal-content {
+    width:  80%;
+    min-height: 20%;
+    max-height: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fefefe;
+    border-radius: 15px;
+    border: 1px solid #AACE9B;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    text-align: center;
+    overflow-y: auto;
+}
+#close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaaaaa;
+}
+#close:hover, .close:focus {
+    color: #49a37b;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 @media screen and (min-width: 1025px) {
 
@@ -132,5 +176,8 @@ input[type="text"], input[type="password"], input[type="date"] {
         width: 45%;
     }
 
+    .modal-content {
+        width:  50%;
+    }
 }
 

@@ -202,23 +202,24 @@ function addressBlur() {
         errorAddress.innerHTML = '* At least 5 characters.';
         addressValidation = false;
     } else {
+      const spaceCount = address.value.split(' ').length - 1; // contar espacios
+      const containsOneSpace = spaceCount === 1; // verificar si hay un solo espacio
         for (let i = 0; i < address.value.length; i++) {
-            const reading = address.value[i];
-            if (arrayLetters.includes(reading.toLowerCase())) {
-                containsLetters = true;
-            } if (arrayNumbers.includes(reading)) {
-                containsNumbers = true;
-            }
-            const spaceBetween = address.value.indexOf(" ");
-            if (containsLetters && containsNumbers && spaceBetween > 0 && spaceBetween < address.value.length -1) {
-                errorAddress.innerHTML = '';
-                addressValidation = true;
-            } else {
-                address.classList.add("error");
-                errorAddress.innerHTML = '* Must contain letters and numbers separated by a space.';
-                addressValidation = false;
-            }
+        const reading = address.value[i];
+        if (arrayLetters.includes(reading.toLowerCase())) {
+            containsLetters = true;
+        } if (arrayNumbers.includes(reading)) {
+            containsNumbers = true;
         }
+        if (containsLetters && containsNumbers && containsOneSpace) {
+            errorAddress.innerHTML = '';
+            addressValidation = true;
+        } else {
+            address.classList.add("error");
+            errorAddress.innerHTML = '* Must contain letters and numbers separated by a single space.';
+            addressValidation = false;
+        }
+    }
     }
     return addressValidation;
 }
@@ -350,11 +351,52 @@ function repeatPasswordFocus() {
     errorRepeatPassword.innerHTML = ' ';
 }
 
+// convert date
+function getFormattedDate(birthday) {
+    let year = birthday.getFullYear();
+    let month = (1 + birthday.getMonth()).toString().padStart(2, '0');
+    let day = birthday.getDate().toString().padStart(2, '0');
+
+    return month + '/' + day + '/' + year;
+}
+
+
+// Modal
+var modal = document.getElementById('modal');
+var modalClose = document.getElementById('close');
+var pModal = document.getElementById('p-modal');
+
+modalClose.addEventListener('click', closeModal);
+
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
+
 // Button validation
 var submitButton = document.getElementById('submit');
 submitButton.addEventListener('click', submitEvent);
 
 function submitEvent() {
+    var url = 'https://api-rest-server.vercel.app/signup';
+    var queryParams =
+        "?name=" + encodeURIComponent (nameInput.value) +
+        '&lastName=' + encodeURIComponent (lastName.value) +
+        '&dni=' + encodeURIComponent (parseInt(id.value)) +
+        '&dob=' + encodeURIComponent(getFormattedDate(new Date(birthday.value))) +
+        '&phone=' + encodeURIComponent (parseInt(phone.value)) +
+        '&address=' + encodeURIComponent (address.value) +
+        '&city=' + encodeURIComponent (locationInput.value) +
+        '&zip=' + encodeURIComponent (parseInt(zipCode.value)) +
+        '&email=' + encodeURIComponent (email.value) +
+        '&password=' + encodeURIComponent (password.value) +
+        '&repeatPassword=' + encodeURIComponent (repeatPassword.value);
     if (
         nameBlur() &&
         lastNameBlur() &&
@@ -366,25 +408,63 @@ function submitEvent() {
         zipCodeBlur() &&
         emailBlur() &&
         passwordBlur() &&
-        repeatPasswordBlur() )
-        {
-            alert('Sign up successful!' + '\n'
-            + 'Name: ' + nameInput.value + '\n'
-            + 'Lastname: ' + lastName.value + '\n'
-            + 'Id: ' + id.value + '\n'
-            + 'Birthday: ' + birthday.value + '\n'
-            + 'Phone Number: ' + phone.value + '\n'
-            + 'Address: ' + address.value + '\n'
-            + 'Location: ' + locationInput.value + '\n'
-            + 'Zipcode: ' + zipCode.value + '\n'
-            + 'Email: ' + email.value + '\n'
-            + 'Password: ' + password.value + '\n'
-            + 'Repeat Password: ' + repeatPassword.value + '\n'
-            + 'Please, confirm.');
-        } else {
-        alert('Please check your information is correct.');
+        repeatPasswordBlur()
+        ){
+    fetch (url + queryParams, {
+            method: 'GET'
+    })
+        .then(response => response.json())
+        .then(data => {
+            if(data.success) {
+                localStorage.setItem('name', nameInput.value);
+                localStorage.setItem('lastName', lastName.value);
+                localStorage.setItem('id', id.value);
+                localStorage.setItem('birthday', birthday.value);
+                localStorage.setItem('phone number', phone.value);
+                localStorage.setItem('address', address.value);
+                localStorage.setItem('location', locationInput.value);
+                localStorage.setItem('zipCode', zipCode.value);
+                localStorage.setItem('email', email.value);
+                localStorage.setItem('password', password.value);
+                localStorage.setItem('repeat pasword', repeatPassword.value);
+                modal.style.display = 'flex';
+                pModal.innerText =
+                data.msg + ':\n' +
+                'Name: ' + nameInput.value + '\n' +
+                'Lastname: ' + lastName.value + '\n' +
+                'ID: ' + id.value + '\n' +
+                'Birthday: ' + birthday.value + '\n' +
+                'Phone Number: ' + phone.value + '\n' +
+                'Address: ' + address.value + '\n' +
+                'Location: ' + locationInput.value + '\n' +
+                'Zipcode: ' + zipCode.value + '\n' +
+                'Email: ' + email.value + '\n' +
+                'Password: ' + password.value + '\n' +
+                'Repeat Password: ' + repeatPassword.value + '\n' +
+                'Please, confirm.';
+                submitButton.setAttribute('href', "../views/index.html")
+            } else {
+                modal.style.display = 'flex';
+                pModal.innerText = data.msg;
+            }
+        })
+        .catch(error => console.error(error));
+    } else {
+        nameBlur();
+        lastNameBlur();
+        idBlur();
+        birthdayBlur();
+        phoneBlur();
+        addressBlur();
+        locationBlur();
+        zipCodeBlur();
+        emailBlur();
+        passwordBlur();
+        repeatPasswordBlur();
+        modal.style.display = 'flex';
+        pModal.innerText = 'Please, check you information is correct.';
     }
-}
+};
 
 }
 
