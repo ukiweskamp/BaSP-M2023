@@ -91,7 +91,7 @@ submitButton.addEventListener('click', submitEvent);
 
 function submitEvent() {
 var url = 'https://api-rest-server.vercel.app/login';
-    var queryParams = "?email=" + encodeURIComponent (inputEmail.value) +
+var queryParams = "?email=" + encodeURIComponent (inputEmail.value) +
                     '&password=' + encodeURIComponent (inputPassword.value)
     if (emailBlur() && passwordBlur()) {
     fetch (url + queryParams, {
