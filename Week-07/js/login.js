@@ -67,38 +67,52 @@ function passwordFocus() {
     errorPassword.innerHTML = ' ';
 }
 
+
+// Modal
+var modal = document.getElementById('modal');
+var modalClose = document.getElementById('close');
+var pModal = document.getElementById('p-modal');
+
+modalClose.addEventListener('click', closeModal);
+
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
 // Button validation
 var submitButton = document.getElementById('submit');
 submitButton.addEventListener('click', submitEvent);
 
-// validación de la semana 7 que fuunciona
-
 function submitEvent() {
-    var url = 'https://api-rest-server.vercel.app/login';
+var url = 'https://api-rest-server.vercel.app/login';
     var queryParams = "?email=" + encodeURIComponent (inputEmail.value) +
                     '&password=' + encodeURIComponent (inputPassword.value)
     if (emailBlur() && passwordBlur()) {
     fetch (url + queryParams, {
             method: 'GET'
         })
-        .then (function (response) {
-            if (!response.ok) {
-                throw new Error(response.status + "* The answer from the network is not correct")
-            }
-            return response.json()
-        })
-        .then (function(data){
-            // Verify that the response has data
-            if(data) {
-                alert('Response received: ' + JSON.stringify(data));
-            } else {
-                alert('The response contains no data')
-            }
-        })
-        .catch(function (error) {
-            alert('Error: ' + error.message);
-        });
-} else {
-    alert('Please check your information is correct.');
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    modal.style.display = 'flex';
+                    pModal.innerText = data.msg + ':' + '\n' + 'Email: ' + inputEmail.value + '\n' + 'Password: ' + inputPassword.value + '.';
+                    submitButton.setAttribute('href', "../views/index.html")
+                } else {
+                    modal.style.display = 'flex';
+                    pModal.innerText = data.msg;
+                }
+            })
+            .catch(error => console.error(error));
+    } else {
+        emailBlur();
+        passwordBlur();
+        modal.style.display = 'flex';
+        pModal.innerText = 'Ooops! Something went wrong.' + '\n' + 'Please verify login information.';
     }
-}
+};
