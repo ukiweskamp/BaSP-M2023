@@ -1,5 +1,3 @@
-window.onload = function() {
-
 // VARIABLES
 
 var nameInput = document.getElementById('name');
@@ -335,6 +333,9 @@ function passwordFocus() {
     errorPassword.innerHTML = ' ';
 }
 
+
+// Repeat Password: Same password
+
 function repeatPasswordBlur() {
     if (repeatPassword.value !== password.value || repeatPassword.value == ""){
         repeatPassword.classList.add("error");
@@ -397,23 +398,32 @@ function submitEvent() {
         '&email=' + encodeURIComponent (email.value) +
         '&password=' + encodeURIComponent (password.value) +
         '&repeatPassword=' + encodeURIComponent (repeatPassword.value);
-    if (
-        nameBlur() &&
-        lastNameBlur() &&
-        idBlur() &&
-        birthdayBlur() &&
-        phoneBlur() &&
-        addressBlur() &&
-        locationBlur() &&
-        zipCodeBlur() &&
-        emailBlur() &&
-        passwordBlur() &&
-        repeatPasswordBlur()
-        ){
+    // validaciones de la semana 6 (del lado del frontend)
+    // if (
+    //     nameBlur() &&
+    //     lastNameBlur() &&
+    //     idBlur() &&
+    //     birthdayBlur() &&
+    //     phoneBlur() &&
+    //     addressBlur() &&
+    //     locationBlur() &&
+    //     zipCodeBlur() &&
+    //     emailBlur() &&
+    //     passwordBlur() &&
+    //     repeatPasswordBlur()
+    //     ){
     fetch (url + queryParams, {
             method: 'GET'
     })
-        .then(response => response.json())
+        .then(function(response){
+            if(response.ok){
+                return response.json();
+            } else{
+                return response.json().then(error => {
+                    throw new Error(JSON.stringify(error));
+                });
+            }
+        })
         .then(data => {
             if(data.success) {
                 localStorage.setItem('name', nameInput.value);
@@ -448,23 +458,47 @@ function submitEvent() {
                 pModal.innerText = data.msg;
             }
         })
-        .catch(error => console.error(error));
-    } else {
-        nameBlur();
-        lastNameBlur();
-        idBlur();
-        birthdayBlur();
-        phoneBlur();
-        addressBlur();
-        locationBlur();
-        zipCodeBlur();
-        emailBlur();
-        passwordBlur();
-        repeatPasswordBlur();
-        modal.style.display = 'flex';
-        pModal.innerText = 'Please, check you information is correct.';
-    }
+        .catch(function(error){
+            var invalidInfo= JSON.parse(error.message);
+            var invalidErrors = invalidInfo.errors;
+            var errorMSG= '';
+            for (let i= 0; i < invalidErrors.length; i++) {
+                alertContent= errorMSG+'- '+(invalidErrors[i].msg)+'\n';
+            }
+            modal.style.display = "flex";
+            pModal.innerText = '  Error in user sign up, details:  '+'\n'+'\n'
+            +errorMSG;
+        })
+    // Respuesta de la semana 6 (del lado del frontend)
+    // } else {
+    //     nameBlur();
+    //     lastNameBlur();
+    //     idBlur();
+    //     birthdayBlur();
+    //     phoneBlur();
+    //     addressBlur();
+    //     locationBlur();
+    //     zipCodeBlur();
+    //     emailBlur();
+    //     passwordBlur();
+    //     repeatPasswordBlur();
+    //     modal.style.display = 'flex';
+    //     pModal.innerText = 'Please, check you information is correct.';
+    // }
 };
 
-}
+// Get Item Local Storage
 
+window.onload = function(){
+    nameInput.value = localStorage.getItem('name');
+    lastName.value = localStorage.getItem('lastName');
+    id.value = localStorage.getItem('id');
+    birthday.value = localStorage.getItem('birthday');
+    phone.value = localStorage.getItem('phone number');
+    address.value = localStorage.getItem('address');
+    locationInput.value = localStorage.getItem('location');
+    zipCode.value = localStorage.getItem('zipCode');
+    email.value = localStorage.getItem('email');
+    password.value = localStorage.getItem('password');
+    repeatPassword.value = localStorage.getItem('password');
+}
