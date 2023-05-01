@@ -160,6 +160,23 @@ function messageFocus(){
     message.classList.remove("error");
 }
 
+// Modal
+var modal = document.getElementById('modal');
+var modalClose = document.getElementById('close');
+var pModal = document.getElementById('p-modal');
+
+modalClose.addEventListener('click', closeModal);
+
+function closeModal() {
+    modal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
 // Button validation
 var submitButton = document.getElementById('button-send-it');
 submitButton.addEventListener('click', submitEvent);
@@ -171,17 +188,21 @@ function submitEvent() {
         contactReasonBlur() &&
         messageBlur() )
         {
-            alert('Sign up successful!' + '\n'
+            modal.style.display = 'flex';
+            pModal.innerText = 'Message send!' + '\n'
             + 'Name: ' + nameInput.value + '\n'
-            + 'Lastname: ' + lastName.value + '\n'
+            + 'Last name: ' + lastName.value + '\n'
             + 'Email: ' + email.value + '\n'
             + 'Contact Reason: ' + contactReason.value + '\n'
-            + 'Message: ' + message.value + '\n'
-            + 'Please, confirm.');
+            + 'Message: ' + message.value + '\n';
         } else {
-        alert('Please check your information is correct.');
+            modal.style.display = 'flex';
+            pModal.innerText =('Please check your information is correct.');
     }
 }
+
+
+
 function clearFields() {
     document.querySelectorAll('input, textarea').forEach(input => input.value = '');
     document.getElementById('message').value = '';
