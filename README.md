@@ -108,6 +108,39 @@ You can see the project github page in: [Link-page index.html](https://ukiweskam
 
 ---
 
+## Week-07
+
+### **MegaRocket Index & Login & Sign-up with HTML / CSS / JS**
+
+To the forms of the previously developed views -Login and Sign-up- an HTTP request call from JavaScript was added to send the data obtained through each form to a web server.
+
+The error response is obtained directly from the API.
+
+Added a modal that replaces all alerts.
+
+### Week-07
+
+    1. 'CSS' folder
+        * reset.css file
+        * header.css file
+        * footer.css file
+        * main.css file
+        * sign-up.css file
+        * login.css file
+    2. views folder
+        * index.html file
+        * sign-up.html file
+        * login.html file
+    3. js folder
+        * contact.js
+        * sign-up.js
+        * login.js
+    4 requeriments.pdf
+
+You can see the project github page in: [Link-page index.html](https://ukiweskamp.github.io/BaSP-M2023/Week-07/views/index.html "Index")
+
+---
+
 ## Authors
 
 Eugenio Weskamp
