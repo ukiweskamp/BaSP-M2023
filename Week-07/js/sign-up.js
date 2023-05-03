@@ -461,13 +461,12 @@ function submitEvent() {
         .catch(function(error){
             var invalidInfo= JSON.parse(error.message);
             var invalidErrors = invalidInfo.errors;
-            var errorMSG= '';
-            for (let i= 0; i < invalidErrors.length; i++) {
-                alertContent= errorMSG+'- '+(invalidErrors[i].msg)+'\n';
+            var alertContent= '';
+            for (var counter= 0; counter < invalidErrors.length; counter++){
+                alertContent= alertContent+'- '+(invalidErrors[counter].msg)+'\n';
             }
-            modal.style.display = "flex";
-            pModal.innerText = '  Error in user sign up, details:  '+'\n'+'\n'
-            +errorMSG;
+            alert('  Error in user sign up, details:  '+'\n'+'\n'
+            +alertContent);
         })
     // Respuesta de la semana 6 (del lado del frontend)
     // } else {
