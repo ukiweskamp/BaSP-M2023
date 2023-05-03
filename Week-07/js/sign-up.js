@@ -465,8 +465,9 @@ function submitEvent() {
             for (var counter= 0; counter < invalidErrors.length; counter++){
                 alertContent= alertContent+'- '+(invalidErrors[counter].msg)+'\n';
             }
-            alert('  Error in user sign up, details:  '+'\n'+'\n'
-            +alertContent);
+            modal.style.display = "flex";
+            pModal.innerText = '  Error in user sign up, details:  '+'\n'+'\n'
+            +alertContent;
         })
     // Respuesta de la semana 6 (del lado del frontend)
     // } else {
